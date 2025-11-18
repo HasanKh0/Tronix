@@ -21,14 +21,13 @@ if(isset($_POST['submit'])){
    $select_user->execute([$email]);
 
    if($select_user->rowCount() > 0){
-      $message = '<div class="message error">Email already exists!</div>';
+      $message = 'Email already exists!';
    } elseif($pass != $cpass){
-      $message = '<div class="message error">Confirm password not matched!</div>';
+      $message = 'Passwords does not match!';
    } else {
       $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
       $insert_user->execute([$name, $email, $cpass]);
       $message = 'Registered successfully! Redirecting to login...';
-
       echo "<script>
          setTimeout(() => {
             window.location.href = 'user_login.php';

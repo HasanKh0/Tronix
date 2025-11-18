@@ -8,22 +8,23 @@ if(isset($message)){
       echo '
       <div class="message" style="
          background-color: #eaf8ec;
-         border: 1px solid #2ecc71;
-         color: #27ae60;
+         border: 1px solid Red;
+         color: red;
          padding: 10px 15px;
          border-radius: 6px;
          margin: 10px auto;
          width: 80%;
          text-align: center;
-         font-weight: 500;
+         font-size:20px;
+         font-weight: 800;
          position: relative;">
          <span>'.$msg.'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();" style="
             position:absolute;
-            top:8px;
+            top:13px;
             right:10px;
             cursor:pointer;
-            color:#27ae60;"></i>
+            color:red;"></i>
       </div>
       ';
    }
