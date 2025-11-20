@@ -29,6 +29,10 @@ include 'components/wishlist_cart.php';
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/slider.css">
+   <link rel="stylesheet" href="css/products.css">
+   <link rel='stylesheet' href= "css/category.css">
+   <link rel='stylesheet' href= "css/footer.css">
 
 </head>
 <body>
@@ -79,7 +83,8 @@ include 'components/wishlist_cart.php';
    </div>
 
       <div class="swiper-pagination"></div>
-
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
    </div>
 
 </section>
@@ -137,7 +142,7 @@ include 'components/wishlist_cart.php';
    </div>
 
    <div class="swiper-pagination"></div>
-
+    
    </div>
 
 </section>
@@ -146,9 +151,7 @@ include 'components/wishlist_cart.php';
 
    <h1 class="heading">Latest products</h1>
 
-   <div class="swiper products-slider">
-
-   <div class="swiper-wrapper">
+   <div class="products-grid">
 
    <?php
      $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6"); 
@@ -156,14 +159,20 @@ include 'components/wishlist_cart.php';
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <form action="" method="post" class="swiper-slide slide">
+   <form action="" method="post" class="product-card">
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
       <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
       <input type="hidden" name="image" value="<?= $fetch_product['image_01']; ?>">
-      <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
-      <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
-      <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
+      
+      <div class="image-container">
+         <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="<?= $fetch_product['name']; ?>">
+         <div class="actions">
+            <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
+            <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
+         </div>
+      </div>
+      
       <div class="name"><?= $fetch_product['name']; ?></div>
       <div class="flex">
          <div class="price"><span>$</span><?= $fetch_product['price']; ?><span>/-</span></div>
@@ -180,17 +189,7 @@ include 'components/wishlist_cart.php';
 
    </div>
 
-   <div class="swiper-pagination"></div>
-
-   </div>
-
 </section>
-
-
-
-
-
-
 
 
 
@@ -203,25 +202,46 @@ include 'components/wishlist_cart.php';
 <script>
 
 var swiper = new Swiper(".home-slider", {
-   loop:true,
+   loop: true,
    spaceBetween: 20,
+   effect: 'fade',
+   fadeEffect: {
+      crossFade: true
+   },
+   speed: 800,
+   autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+   },
    pagination: {
       el: ".swiper-pagination",
-      clickable:true,
-    },
+      clickable: true,
+   },
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   },
+   grabCursor: true,
 });
 
- var swiper = new Swiper(".category-slider", {
-   loop:true,
+  var swiper = new Swiper(".category-slider", {
+   loop: true,
    spaceBetween: 20,
+   speed: 4000,
+   autoplay: {
+      delay: 10,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+   },
    pagination: {
       el: ".swiper-pagination",
-      clickable:true,
+      clickable: true,
    },
    breakpoints: {
       0: {
          slidesPerView: 2,
-       },
+      },
       650: {
         slidesPerView: 3,
       },
@@ -234,25 +254,25 @@ var swiper = new Swiper(".home-slider", {
    },
 });
 
-var swiper = new Swiper(".products-slider", {
-   loop:true,
-   spaceBetween: 20,
-   pagination: {
-      el: ".swiper-pagination",
-      clickable:true,
-   },
-   breakpoints: {
-      550: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-   },
-});
+// var swiper = new Swiper(".products-slider", {
+//    loop:true,
+//    spaceBetween: 20,
+//    pagination: {
+//       el: ".swiper-pagination",
+//       clickable:true,
+//    },
+//    breakpoints: {
+//       550: {
+//         slidesPerView: 2,
+//       },
+//       768: {
+//         slidesPerView: 2,
+//       },
+//       1024: {
+//         slidesPerView: 3,
+//       },
+//    },
+// });
 
 </script>
 

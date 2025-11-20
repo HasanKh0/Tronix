@@ -45,7 +45,11 @@ if(isset($_POST['submit'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/slider.css">
+   <link rel="stylesheet" href="css/products.css">
+   <link rel='stylesheet' href= "css/category.css">
+   <link rel='stylesheet' href= "css/footer.css">
 </head>
 <body>
    

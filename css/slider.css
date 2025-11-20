@@ -1,0 +1,339 @@
+/* ========== MODERN HERO SLIDER STYLES ========== */
+
+/* Hero Background */
+.home-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    min-height: 55vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/home-bg.png) no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Slider Container */
+.home-bg .home {
+    position: relative;
+    z-index: 1;
+}
+
+.home-bg .home .swiper {
+    padding: 2rem 0;
+}
+
+/* Individual Slide */
+.home-bg .home .slide {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 2rem;
+    min-height: 50vh;
+    position: relative;
+}
+
+/* Slide Gradient Overlay */
+.home-bg .home .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    border-radius: 2rem;
+    z-index: -1;
+}
+
+/* Content Section */
+.home-bg .home .slide .content {
+    flex: 1 1 40rem;
+    animation: slideInLeft 0.8s ease-out;
+    z-index: 2;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Discount Badge */
+.home-bg .home .slide .content span {
+    display: inline-block;
+    font-size: 1.6rem !important;
+    font-weight: 600;
+    color: var(--white) !important;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+}
+
+/* Main Heading */
+.home-bg .home .slide .content h3 {
+    font-size: 4.5rem !important;
+    font-weight: 800 !important;
+    color: var(--white) !important;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 1.5rem 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shop Now Button */
+.home-bg .home .slide .content .btn {
+    display: inline-block !important;
+    width: auto !important;
+    margin-top: 1.5rem;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--main-color) !important;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.home-bg .home .slide .content .btn:hover {
+    background: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--white);
+}
+
+/* Image Section */
+.home-bg .home .slide .image {
+    flex: 1 1 40rem;
+    animation: slideInRight 0.8s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-bg .home .slide .image img {
+    width: 100%;
+    height: 35rem;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.home-bg .home .slide:hover .image img {
+    transform: scale(1.05);
+}
+
+/* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 4.5rem !important;
+    height: 4.5rem !important;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.8rem !important;
+    color: var(--main-color);
+    font-weight: 900;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Pagination Bullets */
+.home-slider .swiper-pagination {
+    bottom: 1.5rem !important;
+}
+
+.home-slider .swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.home-slider .swiper-pagination-bullet-active {
+    width: 2.5rem;
+    border-radius: 1rem;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 991px) {
+    .home-bg {
+        min-height: 50vh;
+    }
+
+    .home-bg .home .slide {
+        min-height: 45vh;
+        padding: 2rem 1.5rem;
+    }
+
+    .home-bg .home .slide .content h3 {
+        font-size: 3.8rem !important;
+    }
+
+    .home-bg .home .slide .image img {
+        height: 30rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-bg {
+        min-height: auto;
+    }
+
+    .home-bg .home .swiper {
+        padding: 1rem 0;
+    }
+
+    .home-bg .home .slide {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .home-bg .home .slide .content {
+        animation: fadeInUp 0.8s ease-out;
+        order: 2;
+    }
+
+    .home-bg .home .slide .image {
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .home-bg .home .slide .content h3 {
+        font-size: 2.6rem !important;
+        margin: 0.8rem 0;
+    }
+
+    .home-bg .home .slide .content span {
+        font-size: 1.3rem !important;
+        padding: 0.6rem 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .home-bg .home .slide .content .btn {
+        padding: 0.9rem 2.5rem;
+        font-size: 1.4rem;
+        margin-top: 0.8rem;
+    }
+
+    .home-bg .home .slide .image img {
+        height: 18rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1.4rem !important;
+    }
+
+    .home-slider .swiper-pagination {
+        bottom: 0.8rem !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-bg .home .slide {
+        padding: 1.2rem 1rem;
+    }
+
+    .home-bg .home .slide .content h3 {
+        font-size: 2.2rem !important;
+    }
+
+    .home-bg .home .slide .content span {
+        font-size: 1.2rem !important;
+        padding: 0.5rem 1.3rem;
+    }
+
+    .home-bg .home .slide .content .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    .home-bg .home .slide .image img {
+        height: 15rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}

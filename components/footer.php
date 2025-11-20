@@ -1,41 +1,72 @@
 <footer class="footer">
 
-   <section class="grid">
+   <div class="footer-content">
 
-      <div class="box">
-         <h3>Quick links</h3>
-         <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
-         <a href="about.php"> <i class="fas fa-angle-right"></i> About</a>
-         <a href="shop.php"> <i class="fas fa-angle-right"></i> Shop</a>
-         <a href="contact.php"> <i class="fas fa-angle-right"></i> Contact</a>
+      <div class="footer-section about">
+         <div class="logo-section">
+            <i class="fas fa-bolt"></i>
+            <h2>Tronix</h2>
+         </div>
+         <p>Your trusted destination for the latest electronics and tech gadgets. Quality products, competitive prices, and exceptional service.</p>
+         <div class="social-links">
+            <a href="https://www.facebook.com/HasanKheireddine" target="_blank" aria-label="Facebook">
+               <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/HasanKheireddine" target="_blank" aria-label="Twitter">
+               <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/Hasan.k.h__/" target="_blank" aria-label="Instagram">
+               <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/hasankh12/" target="_blank" aria-label="LinkedIn">
+               <i class="fab fa-linkedin"></i>
+            </a>
+         </div>
       </div>
 
-      <div class="box">
-         <h3>Extra links</h3>
-         <a href="user_login.php"> <i class="fas fa-angle-right"></i> Login</a>
-         <a href="user_register.php"> <i class="fas fa-angle-right"></i> Register</a>
-         <a href="cart.php"> <i class="fas fa-angle-right"></i> Cart</a>
-         <a href="orders.php"> <i class="fas fa-angle-right"></i> Orders</a>
+      <div class="footer-section links">
+         <h3>Quick Links</h3>
+         <ul>
+            <li><a href="home.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.php"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="shop.php"><i class="fas fa-chevron-right"></i> Shop</a></li>
+            <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
+         </ul>
       </div>
 
-      <div class="box">
-         <h3>Contact Us.</h3>
-         <a href="tel:9800000000"><i class="fas fa-phone"></i> +961 980 000 </a>
-         <a href="tel:9900000000"><i class="fas fa-phone"></i> +961 974 000 </a>
-         <a href="mailto:tronix@gmail.com"><i class="fas fa-envelope"></i> Tronix@gmail.com</a>
-         <a href="https://www.google.com/maps/place/Franco-Tronix/@33.8781004,35.534037,15z/data=!4m10!1m2!2m1!1stronix+company!3m6!1s0x151f17713337655f:0x3e94205b2689432d!8m2!3d33.8781004!4d35.5530914!15sCg50cm9uaXggY29tcGFueZIBEWVsZWN0cm9uaWNzX3N0b3JlqgFKEAEqEiIOdHJvbml4IGNvbXBhbnkoADIeEAEiGrckantVjrK9Gxi2cP2EQLyByeeu8Lpfrdv4MhIQAiIOdHJvbml4IGNvbXBhbnngAQA!16s%2Fg%2F11rqxs4w7c?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D"><i class="fas fa-map-marker-alt"></i> Beirut, Lebanon </a>
+      <div class="footer-section links">
+         <h3>My Account</h3>
+         <ul>
+            <li><a href="user_login.php"><i class="fas fa-chevron-right"></i> Login</a></li>
+            <li><a href="user_register.php"><i class="fas fa-chevron-right"></i> Register</a></li>
+            <li><a href="cart.php"><i class="fas fa-chevron-right"></i> Shopping Cart</a></li>
+            <li><a href="orders.php"><i class="fas fa-chevron-right"></i> My Orders</a></li>
+         </ul>
       </div>
 
-      <div class="box">
-         <h3>Follow Us</h3>
-         <a href="https://www.facebook.com/HasanKheireddine" target="_blank"><i class="fab fa-facebook-f"></i>facebook</a>
-         <a href="https://twitter.com/HasanKheireddine" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
-         <a href="https://www.instagram.com/Hasan.k.h__/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-         <a href="https://www.linkedin.com/in/hasankh12/" target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a>
+      <div class="footer-section contact">
+         <h3>Contact Info</h3>
+         <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+               <a href="tel:9800000000">+961 980 000</a>
+               <a href="tel:9900000000">+961 974 000</a>
+            </div>
+         </div>
+         <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:tronix@gmail.com">Tronix@gmail.com</a>
+         </div>
+         <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.google.com/maps/place/Franco-Tronix/@33.8781004,35.534037,15z" target="_blank">Beirut, Lebanon</a>
+         </div>
       </div>
 
-   </section>
+   </div>
 
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>Hasan Kheireddine</span> | all rights reserved!</div>
+   <div class="footer-bottom">
+      <p>&copy; <?= date('Y'); ?> <span>Tronix</span>. All Rights Reserved. Designed by <span>Hasan Kheireddine</span></p>
+   </div>
 
 </footer>
